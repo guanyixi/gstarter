@@ -1,0 +1,32 @@
+.site-main{
+	padding:50px 0;
+}
+
+.page-header{
+	padding:30px 15px;
+	text-align:center;
+	background-color:#efefef;
+}
+
+.search-form{
+	position:relative;
+	display:inline-block;
+	width:250px;
+	.search-input{
+		display: block;
+		width:100%;
+		padding:8px 80px 8px 15px;
+		line-height:1;
+	}
+	#searchsubmit{
+		background:url(../assets/img/search.svg) no-repeat center center;
+		background-size: 30px 30px;
+		position:absolute;
+		top:0;
+		right:10px;
+		background-color:transparent;
+		border:0;
+		font-size:14px;
+		padding:10px;
+	}
+}

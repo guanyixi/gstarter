@@ -1,0 +1,75 @@
+/*
+flex-* is used for same width columns. They can break several times. Ex. flex-3 break to 50% at 992px, then break to 100% at 768.
+flex-s-*, flex-m-*, flex-l-* only break once or never break. s never breaks. m breaks at 768px. l breaks at 992px. 
+container > flex-container > flex-*
+Add class .align-container to flex-container if want to align columns to other containers.
+*/
+
+.container-fit{
+	width:100%;
+	padding:0 15px;
+	margin:0 auto;
+    max-width:850px;
+}
+
+.container-slim{
+	width:100%;
+	padding:0 15px;
+	margin:0 auto;
+    max-width:700px;
+}
+
+//put flex-container inside container or container-fluid to align on left/right side.
+.flex-container{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:stretch;
+}
+
+.align-container{
+	margin:0 -15px;
+}
+
+.flex-3, .flex-4, [class*="flex-s"], [class*="flex-m"], [class*="flex-l"]{
+	padding:15px;
+	>div, >article{
+		height: 100%;
+	}
+}
+
+
+.flex-m-1, .flex-l-1{width:8.33%;}
+.flex-m-2, .flex-l-2{width:16.66%;}
+.flex-3, .flex-m-3, .flex-l-3{width:25%;}
+.flex-4, .flex-m-4, .flex-l-4{width:33.33%;}
+.flex-m-5, .flex-l-5{width:41.66%;}
+.flex-m-6, .flex-l-6{width:50%;}
+.flex-m-7, .flex-l-7{width:58.33%;}
+.flex-m-8, .flex-l-8{width:66.66%;}
+.flex-m-9, .flex-l-9{width:75%;}
+.flex-m-10, .flex-l-10{width:83.33%;}
+.flex-m-11, .flex-l-11{width:91.66%;}
+.flex-m-12, .flex-l-12{width:100%;}
+
+@media(max-width:992px){
+	.flex-3{
+		width:50%;
+	}
+    [class*="flex-l"]{
+		width:100%;
+	}
+}
+
+@media(max-width:768px){
+	.container-fit{
+		max-width:720px;
+	}
+	.flex-3, .flex-4{
+		width:100%;
+	}
+	[class*="flex-m"]{
+		width:100%;
+	}
+}
+
+

@@ -1,0 +1,27 @@
+
+//vendor
+@import "vendors/normalize";
+@import "vendors/slick";
+@import "vendors/bootstrap_grid";
+
+//modules
+@import "modules/variables";
+@import "modules/mixins";
+@import "modules/flexbox";
+@import "modules/classes";
+
+
+//global
+@import "global/basic";
+@import "global/header";
+@import "global/footer";
+@import "global/page";
+@import "global/slick_custom";
+
+//styles
+@import "styles/homepage";
+@import "styles/pages";
+@import "styles/blogs";
+
+
+

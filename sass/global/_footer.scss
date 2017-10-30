@@ -1,0 +1,20 @@
+.site-footer{
+	padding:20px 0;
+	background-color:#efefef;
+}
+.go-top{
+	display: none;
+	width: 50px;
+	height:42px;
+	position:fixed;
+	right:15px;
+	bottom:15px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color:white;
+	border-radius:3px;
+	&:hover{
+		opacity: 0.9;
+		color:white;
+	}
+}
+

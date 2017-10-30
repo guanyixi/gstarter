@@ -1,0 +1,100 @@
+
+.slider{
+    width: 100%;
+    margin:0 auto;
+    position: relative;
+}
+
+/* Refer to all the divs which were originally in .slider */
+.slick-track > div{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    &:focus, &:active{
+      outline: 0; //remove the blue outline when click on it.
+    }
+}
+
+/*hide text, reset button styles*/
+.slick-arrow, .slick-dots li button{
+   margin:0;
+   padding:0;
+   border: 0;
+   background-color: transparent;
+   color:transparent;
+   &:hover{
+    background-color: transparent;
+    color: transparent;
+   }
+}
+
+/*Arrows*/
+
+.slick-arrow{
+    z-index: 199;
+    width: 40px; //make it same size as the icon
+    height: 42px; //make it same size as the icon
+    padding:2px;
+    font-family: FontAwesome;
+    font-size: 40px;
+    position:absolute;
+    top:65px;
+    &:hover, &:focus{
+        outline: 0;
+        opacity: 0.7;
+    }
+}
+
+.slick-prev:before, .slick-next:before{
+    color: rgba(255, 255, 255, 0.5);
+    &:hover, &:focus{
+        color: white;
+    }
+}
+
+.slick-prev{
+    left: 20px;
+    &:before{
+    content: "\f0a8";
+    }
+}
+
+.slick-next{
+    right: 20px;
+    &:before{
+    content: "\f0a9";
+    }
+}
+
+
+/*Dots*/
+.slick-dots{
+    position:absolute;
+    width:100%;
+    z-index: 198;
+    bottom: 15px;
+    margin: 0;
+    padding:0;
+    text-align: center;
+    li{
+    display: inline-block;
+    padding:0;
+    margin:6px;
+        button{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #999;
+            overflow: hidden;
+            &:hover, &:focus{
+                background-color: #555;
+                outline: 0;
+            }
+        }
+    }
+    .slick-active button{
+        background-color: white;
+    }
+}

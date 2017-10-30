@@ -1,0 +1,228 @@
+/*------ Basic -------*/
+
+html {
+	box-sizing: border-box;
+	font-size:15px;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	font-size:15px;
+}
+
+
+p{
+	line-height: 1.5;
+	margin:0;
+	padding:0 0 0.5em 0;
+}
+
+span{
+	font-size: inherit;
+}
+
+a{
+	text-decoration: none;
+	color:#333;
+	transition:all 0.3s ease;
+	&:hover, &:focus, &:active, &:visited{
+		outline: 0;
+		text-decoration: none;
+	}
+	&:hover{
+		color: #999;
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin:0;
+	padding:0 0 0.5em;
+}
+
+h1{
+	font-size: 40px;
+}
+
+h2{
+	font-size: 32px;
+}
+
+h3{
+	font-size: 26px;
+}
+
+h4{
+	font-size: 20px;
+}
+
+ul, ol {
+    margin: 0;
+    padding:0 0 0 15px;
+}
+
+/*------ Button & Forms -------*/
+
+button{
+	border: 0;
+	border-radius: 0;
+	outline:0;
+	box-shadow: none;
+	background-color:transparent;
+	&:hover, &:focus, &:active, &:visited{
+		outline: 0;
+	}
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]{
+	outline: none;
+}
+
+input,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+input[type="submit"],
+textarea {
+	border-radius:0;
+	font-size:16px;
+	padding:7px 15px;
+	line-height:1.2;
+	&:focus {
+		outline: none;
+	}
+}
+
+
+//Change the autofill yellow color.
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+
+//media
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+/*------ 3. Markups -------*/
+
+dfn, cite, em, i {
+	font-style: italic;
+	font-size: 0.95em;
+}
+
+address {
+	font-style: normal;
+}
+
+q{
+	font-style:italic;
+}
+
+code, pre {
+	display: block;
+	margin:15px 0;
+	width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+hr {
+	background-color: #999;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+//Gravity forms
+$error_color: #DB3E00;
+
+.validation_error{
+	border:0 !important;
+	color:$error_color !important;
+	background-color: #efefef;
+}
+.gform_body{
+	li.gfield{
+		padding-right:0 !important;
+	}
+	input, textarea{
+		margin:0 !important;
+		padding:8px 15px !important;
+	}
+	textarea{
+		height: 160px !important;
+	}
+
+	.gfield_error{
+		background-color:transparent !important;
+		border:0 !important;
+		padding:0 !important;
+		input, textarea{
+			border:1px solid $error_color !important;
+		}
+	}
+	.validation_message{
+		color: $error_color !important;
+	}
+}
+
+.gform_footer{
+	margin:0 !important;
+}
+
+
+//accessibility
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:focus {
+		background-color: #eee;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: #999;
+		display: block;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+

@@ -1,0 +1,27 @@
+.top-bar{
+	text-align:right; 
+	padding:10px 0; 
+	background-color: #333333;
+}
+
+.site-header{
+	height:80px;
+}
+.site-title{
+	display:inline-block;
+	width:170px;
+	margin-top:20px;
+	img{
+		width:100%;
+		height:auto;
+	}
+}
+
+.main-navigation{
+	float:right;
+	display: inline-block;
+	width:auto;
+	a{
+		padding:28px 20px;
+	}
+}
