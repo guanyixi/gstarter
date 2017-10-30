@@ -4,6 +4,7 @@
 @import "vendors/slick";
 @import "vendors/bootstrap_grid";
 
+
 //modules
 @import "modules/variables";
 @import "modules/mixins";
@@ -12,16 +13,19 @@
 
 
 //global
-@import "global/basic";
+@import "global/base";
 @import "global/header";
 @import "global/footer";
-@import "global/page";
-@import "global/slick_custom";
+@import "global/forms";
+@import "global/components";
+@import "global/slick";
+
 
 //styles
-@import "styles/homepage";
-@import "styles/pages";
-@import "styles/blogs";
+@import "templates/homepage";
+@import "templates/pages";
+@import "templates/posts";
+// @import "pages/team";
 
 
 

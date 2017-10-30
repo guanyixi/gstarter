@@ -156,43 +156,6 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-//Gravity forms
-$error_color: #DB3E00;
-
-.validation_error{
-	border:0 !important;
-	color:$error_color !important;
-	background-color: #efefef;
-}
-.gform_body{
-	li.gfield{
-		padding-right:0 !important;
-	}
-	input, textarea{
-		margin:0 !important;
-		padding:8px 15px !important;
-	}
-	textarea{
-		height: 160px !important;
-	}
-
-	.gfield_error{
-		background-color:transparent !important;
-		border:0 !important;
-		padding:0 !important;
-		input, textarea{
-			border:1px solid $error_color !important;
-		}
-	}
-	.validation_message{
-		color: $error_color !important;
-	}
-}
-
-.gform_footer{
-	margin:0 !important;
-}
-
 
 //accessibility
 .screen-reader-text {
