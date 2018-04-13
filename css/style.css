@@ -1042,24 +1042,26 @@ hr {
   position: fixed; }
 
 /*
-flex-* is used for same width columns. They can break several times. Ex. flex-3 break to 50% at 992px, then break to 100% at 768.
-flex-s-*, flex-m-*, flex-l-* only break once or never break. s never breaks. m breaks at 768px. l breaks at 992px. 
-container > flex-container > flex-*
-Add class .align-container to flex-container if want to align columns to other containers.
+1. Use modernizor.js to determin if flexbox is supported.
+2. flex-* can break more than one time. Eg. flex-4 flex-4 flex-4. It breaks two times, from 3 boxes in a row to 2 boxes then 1 box.
+3. flex-s-*, flex-m-*, flex-l-* only break once or never break. They can be mixed. Eg. flex-m-5 + flex-m-7
+4. Add class .align-container to flex-container if want to align columns to other containers. Eg. <div class="flex-container align-container">
+
+Example1
+<div class="flex-container">
+   <div class="flex-4">Box1</div>
+   <div class="flex-4">Box2</div>
+   <div class="flex-4">Box3</div>
+</div>
+
+Example2
+<div class="flex-container">
+   <div class="flex-m-2">Box1</div>
+   <div class="flex-m-4">Box2</div>
+   <div class="flex-m-6">Box3</div>
+</div>
 */
-.container-fit {
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-  max-width: 850px; }
-
-.container-slim {
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-  max-width: 700px; }
-
-.flex-container {
+.flexbox .flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1067,63 +1069,112 @@ Add class .align-container to flex-container if want to align columns to other c
       flex-wrap: wrap;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
-          align-items: stretch; }
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.flex-container {
+  display: block; }
+  .flex-container .flex-3, .flex-container .flex-4, .flex-container [class*="flex-s"], .flex-container [class*="flex-m"], .flex-container [class*="flex-l"] {
+    display: inline-block;
+    margin: 0 -2px;
+    vertical-align: top; }
 
 .align-container {
   margin: 0 -15px; }
 
-.flex-3, .flex-4, [class*="flex-s"], [class*="flex-m"], [class*="flex-l"] {
+.flex-6, .flex-4, .flex-3, .flex-2 [class*="flex-s"], [class*="flex-m"], [class*="flex-l"] {
   padding: 15px; }
-  .flex-3 > div, .flex-3 > article, .flex-4 > div, .flex-4 > article, [class*="flex-s"] > div, [class*="flex-s"] > article, [class*="flex-m"] > div, [class*="flex-m"] > article, [class*="flex-l"] > div, [class*="flex-l"] > article {
+  .flex-6 > *, .flex-4 > *, .flex-3 > *, .flex-2 [class*="flex-s"] > *, [class*="flex-m"] > *, [class*="flex-l"] > * {
     height: 100%; }
 
-.flex-m-1, .flex-l-1 {
-  width: 8.33%; }
-
-.flex-m-2, .flex-l-2 {
-  width: 16.66%; }
-
-.flex-3, .flex-m-3, .flex-l-3 {
-  width: 25%; }
-
-.flex-4, .flex-m-4, .flex-l-4 {
-  width: 33.33%; }
-
-.flex-m-5, .flex-l-5 {
-  width: 41.66%; }
-
-.flex-m-6, .flex-l-6 {
+.flex-6 {
   width: 50%; }
 
-.flex-m-7, .flex-l-7 {
+@media (max-width: 900px) {
+  .flex-6 {
+    width: 100%; } }
+
+.flex-4 {
+  width: 33.33%; }
+
+@media (max-width: 900px) {
+  .flex-4 {
+    width: 50%; } }
+
+@media (max-width: 600px) {
+  .flex-4 {
+    width: 100%; } }
+
+.flex-3 {
+  width: 25%; }
+
+@media (max-width: 900px) {
+  .flex-3 {
+    width: 33.33%; } }
+
+@media (max-width: 600px) {
+  .flex-3 {
+    width: 50%; } }
+
+@media (max-width: 500px) {
+  .flex-3 {
+    width: 100%; } }
+
+.flex-2 {
+  width: 16.66%; }
+
+@media (max-width: 900px) {
+  .flex-2 {
+    width: 25%; } }
+
+@media (max-width: 600px) {
+  .flex-2 {
+    width: 33.33%; } }
+
+@media (max-width: 500px) {
+  .flex-2 {
+    width: 50%; } }
+
+.flex-s-1, .flex-m-1, .flex-l-1 {
+  width: 8.33%; }
+
+.flex-s-2, .flex-m-2, .flex-l-2 {
+  width: 16.66%; }
+
+.flex-s-3, .flex-m-3, .flex-l-3 {
+  width: 25%; }
+
+.flex-s-4, .flex-m-4, .flex-l-4 {
+  width: 33.33%; }
+
+.flex-3-5, .flex-m-5, .flex-l-5 {
+  width: 41.66%; }
+
+.flex-s-6, .flex-m-6, .flex-l-6 {
+  width: 50%; }
+
+.flex-s-7, .flex-m-7, .flex-l-7 {
   width: 58.33%; }
 
-.flex-m-8, .flex-l-8 {
+.flex-s-8, .flex-m-8, .flex-l-8 {
   width: 66.66%; }
 
-.flex-m-9, .flex-l-9 {
+.flex-s-9, .flex-m-9, .flex-l-9 {
   width: 75%; }
 
-.flex-m-10, .flex-l-10 {
+.flex-s-10, .flex-m-10, .flex-l-10 {
   width: 83.33%; }
 
-.flex-m-11, .flex-l-11 {
+.flex-s-11, .flex-m-11, .flex-l-11 {
   width: 91.66%; }
 
-.flex-m-12, .flex-l-12 {
-  width: 100%; }
-
 @media (max-width: 992px) {
-  .flex-3 {
-    width: 50%; }
   [class*="flex-l"] {
     width: 100%; } }
 
 @media (max-width: 768px) {
-  .container-fit {
-    max-width: 720px; }
-  .flex-3, .flex-4 {
-    width: 100%; }
   [class*="flex-m"] {
     width: 100%; } }
 
@@ -1364,7 +1415,7 @@ hr {
 .top-bar {
   text-align: right;
   padding: 10px 0;
-  background-color: #333333; }
+  background-color: #333; }
 
 .site-header {
   height: 80px; }

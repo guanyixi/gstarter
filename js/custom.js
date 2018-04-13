@@ -1,5 +1,3 @@
-
-
 jQuery(document).ready(function($) {
 
 $(function() {
@@ -24,7 +22,7 @@ $(window).scroll(function() {
   $('.slider').slick({
     autoplay:true,
     dots:true,
-    arrows: true,
+    arrows: false,
     fade: false,
     speed: 1200,
   });
@@ -46,6 +44,21 @@ $(window).scroll(function() {
         event.preventDefault();
         $('html, body').animate({scrollTop: 0}, 300);
     });
+
+
+    //Category filter
+    var $mainContent = $('#main-content');
+    var $catLinks = $('#cat-filter li a');
+
+        $catLinks.on('click', function(e){
+            e.preventDefault();
+            alert( 'Clicked Link' );
+            // var $url = $(this).attr('href');
+            // $mainContent.animate({opcacity: '0.5'});
+            // $mainContent.load($url + '#post-container', function(){
+            //     $mainContent.animate({opacity: '1'});
+            // });
+        });
 
 
 

@@ -20,10 +20,22 @@ get_header(); ?>
 		<h1 class="page-title">Blog</h1>
 	</header>
 
+	<div class="container">
+    	<ul id="cat-filter">
+		<?php 
+		    $args = array(
+				'show_option_all' => 'All',
+				'exclude'  => '',
+			);
+		    wp_list_categories($args);
+		?>
+		</ul>
+	</div>
 
-	<main id="main" class="site-main">
 
-		<div class="container">
+	<main id="main-content" class="site-main">
+
+		<div class="container" id="post-container">
 			<?php if(have_posts()):?>
 			<div class="flex-container align-container">
 			    <?php while(have_posts()): the_post(); ?>

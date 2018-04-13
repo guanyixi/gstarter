@@ -18,16 +18,6 @@ get_header(); ?>
 
     <?php get_template_part( 'template-parts/content', 'header' ); ?> 
 
-
-
-  <?php
-  $header_image_id = get_post_meta( get_the_ID(), 'header_image', true );
-  $header_image = get_post($header_image_id); 
-  $title = $header_image->post_title;
-  $description = $header_image->post_content;
-  $caption = $header_image->post_excerpt;
-  ?>
-  
   <img src="<?php echo wp_get_attachment_url($header_image_id); ?>">
   
 
