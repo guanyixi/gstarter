@@ -77,7 +77,8 @@ function gstarter_scripts() {
 	wp_enqueue_script( 'modernizr-custom', get_template_directory_uri() . '/js/modernizr-custom.js', array('jquery'), '', true );
     wp_enqueue_script( 'slick_js', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'custom_js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '', true );
-
+	
+    
 }
 add_action( 'wp_enqueue_scripts', 'gstarter_scripts' );
 
@@ -92,7 +93,6 @@ require get_template_directory() . '/inc/breadcrums.php';
 
 // Option Page
 if( function_exists('acf_add_options_page') ) {
-	
 	acf_add_options_page(array(
 		'page_title' 	=> 'Theme General Settings',
 		'menu_title'	=> 'Theme Settings',
@@ -142,33 +142,5 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
-
-
-//Infinate scroll test
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

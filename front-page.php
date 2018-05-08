@@ -27,7 +27,7 @@ get_header(); ?>
 			<h4>heading4</h4>
 
 			<a href="#">link</a>
-			<button>button</button>
+			<button class="button">.button</button>
 			<p>paragraph</p>
 			<q>quote</q>
 

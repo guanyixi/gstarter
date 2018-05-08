@@ -1217,17 +1217,26 @@ img.aligncenter {
   clear: both;
   height: 0; }
 
-.container-fit {
+.container,
+.container-l,
+.container-m,
+.container-s {
+  padding: 0 20px; }
+
+.container-l,
+.container-m,
+.container-s {
   width: 100%;
-  max-width: 800px;
-  padding: 0 15px;
   margin: 0 auto; }
 
-.container-narrow {
-  width: 100%;
-  max-width: 700px;
-  padding: 0 15px;
-  margin: 0 auto; }
+.container-l {
+  max-width: 1440px; }
+
+.container-m {
+  max-width: 800px; }
+
+.container-s {
+  max-width: 700px; }
 
 .bg-cover {
   background: no-repeat center center;
@@ -1235,6 +1244,19 @@ img.aligncenter {
 
 .spacer {
   padding: 0 10px; }
+
+.center {
+  text-align: center; }
+
+.right {
+  text-align: right; }
+
+.button {
+  background: transparent;
+  border: 0;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white; }
 
 /*------ Basic -------*/
 html {
@@ -1508,6 +1530,42 @@ hr {
     border: 0;
     font-size: 14px;
     padding: 10px; }
+
+@-webkit-keyframes slideUp {
+  0% {
+    opacity: 0;
+    left: 0px;
+    top: 50px; }
+  100% {
+    opacity: 1;
+    left: 0px;
+    top: 0px; } }
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    left: 0px;
+    top: 50px; }
+  100% {
+    opacity: 1;
+    left: 0px;
+    top: 0px; } }
+
+.all-posts article {
+  position: relative;
+  -webkit-animation-name: slideUp;
+          animation-name: slideUp;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s; }
+
+.loading {
+  color: #999; }
+
+.no-more-posts {
+  color: #ccc; }
+
+#filter .current {
+  color: red; }
 
 .slider {
   width: 100%;

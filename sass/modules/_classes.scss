@@ -22,18 +22,27 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
  height: 0;
 }
 
-.container-fit{
+// Containers
+.container, 
+.container-l,
+.container-m,
+.container-s{
+    padding:0 20px;
+}
+.container-l,
+.container-m,
+.container-s{
 	width:100%;
-	max-width:800px;
-	padding:0 15px;
 	margin:0 auto;
 }
-
-.container-narrow{
-	width:100%;
-	max-width:700px;
-	padding:0 15px;
-	margin:0 auto;
+.container-l{
+	max-width:1440px;
+}
+.container-m{
+	max-width:800px;
+}
+.container-s{
+    max-width:700px;
 }
 
 .bg-cover{
@@ -43,6 +52,43 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 .spacer{
 	padding:0 10px;
+}
+
+.center{
+	text-align:center;
+}
+
+.right{
+	text-align:right;
+}
+
+@mixin basic_button{
+	background:transparent;
+	border:0;
+	padding:10px 20px;
+}
+
+.button{
+	@include basic_button;
+	background-color:#333;
+	color:white;
+}
+
+@mixin overlay($color, $opacity, $inner-index){
+	position:relative;
+	&:after{
+		position:absolute;
+		content:"";
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		background-color:rgba($color, $opacity);
+	}
+	& > *{
+		position:relative;
+		z-index:$inner-index;
+	}
 }
 
 

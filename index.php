@@ -20,34 +20,67 @@ get_header(); ?>
 		<h1 class="page-title">Blog</h1>
 	</header>
 
+
+<div id="filter" data-cat="" data-year="" data-keywords="">
 	<div class="container">
-    	<ul id="cat-filter">
-		<?php 
-		    $args = array(
-				'show_option_all' => 'All',
-				'exclude'  => '',
-			);
-		    wp_list_categories($args);
-		?>
-		</ul>
+	    <div class="row">
+			<div class="col-sm-4">
+				<div id="cat-filter">
+				<button data-type="cat" data-value="" >All</button>
+				<?php 
+					$categories = get_categories( array(
+						'orderby' => 'name',
+						'order'   => 'ASC'
+					) );
+					foreach( $categories as $category ) {
+						$cat_name = $category->name;
+						$cat_id = $category->term_id;
+						$cat_slug = $category->slug;
+						?>
+                    <button data-type="cat" data-value="<?php echo $cat_slug; ?>" data-id="<?php echo $cat_id; ?>"><?php echo $cat_name ?></button>
+					<?php } ?>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div id="year-filter">
+					<button data-type="year" data-value="">All</button>
+					<?php 
+						//List $n years
+						$year = (int)date("Y"); 
+						$n = 2;
+					    for ($x = 1; $x <= $n; $x++) { ?>
+					    <button data-type="year" data-value="<?php echo $year; ?>"><?php echo $year; ?></button>
+						
+						<?php $year--; } ?>
+				</div>
+			</div>
+			<div class="col-sm-4">
+                <div id="search-filter">
+					<input type="text">
+					<button>Search</button>
+				</div>
+				
+
+			</div>
+		</div>
 	</div>
+</div>
 
 
 	<main id="main-content" class="site-main">
-
 		<div class="container" id="post-container">
 			<?php if(have_posts()):?>
-			<div class="flex-container align-container">
+			<div class="flex-container align-container all-posts" >
 			    <?php while(have_posts()): the_post(); ?>
 			        <?php get_template_part( 'template-parts/content', 'posts' ); ?>
 			    <?php endwhile; ?>
 			</div>
-
-			<?php get_template_part( 'template-parts/pagination', 'default' ); ?>
+			<center><button data-page="1" class="load-more">Load More...</button></center>
+			<?php //get_template_part( 'template-parts/pagination', 'default' ); ?>
 			<?php  endif; ?>
-		</div>
-
+		</div>	
 	</main><!-- #main -->
+
 </div><!-- #primary -->
 
 <?php

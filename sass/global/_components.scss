@@ -30,3 +30,26 @@
 		padding:10px;
 	}
 }
+
+@keyframes slideUp {
+    0%   {opacity:0; left:0px; top:50px;}
+    100% {opacity:1; left:0px; top:0px;}
+}
+
+.all-posts article{
+	position:relative;
+    animation-name: slideUp;
+    animation-duration: 0.7s;
+}
+
+.loading{
+	color:#999;
+}
+
+.no-more-posts{
+	color:#ccc;
+}
+
+#filter .current{
+	color:red;
+}
